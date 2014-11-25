@@ -1,0 +1,17 @@
+<mvc:View controllerName="com.mlauffer.barcode.view.Master"
+	displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<Page id="page" title="Barcode">
+		<content>
+			<VBox fitContainer="true" justifyContent="Center">
+				<Input id="barcode" description="Barcode" />
+			</VBox>
+		</content>
+		<footer>
+			<Bar>
+				<contentMiddle>
+					<Button id="startScan" icon="sap-icon://camera" press="" />
+				</contentMiddle>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>
