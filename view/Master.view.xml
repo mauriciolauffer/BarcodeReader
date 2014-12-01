@@ -2,14 +2,20 @@
 	displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 	<Page id="page" title="Barcode">
 		<content>
-			<VBox fitContainer="true" justifyContent="Center">
-				<Input id="barcode" description="Barcode" />
-			</VBox>
+			<List id="list" items="{/Barcodes}" noDataText="{i18n>masterListNoDataText}"
+				growing="true" growingScrollToLoad="true">
+				<items>
+					<ObjectListItem title="{value}" />
+				</items>
+			</List>
 		</content>
 		<footer>
 			<Bar>
 				<contentMiddle>
-					<Button id="startScan" icon="sap-icon://camera" press="" />
+					<Button id="startScan" icon="sap-icon://camera" />
+					<Button icon="sap-icon://synchronize" press="onSync" />
+					<Button icon="sap-icon://upload" press="onSync" />
+					<Button icon="sap-icon://camera" press="onStartScan" />
 				</contentMiddle>
 			</Bar>
 		</footer>
