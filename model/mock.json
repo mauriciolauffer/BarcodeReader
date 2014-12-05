@@ -1,39 +1,10 @@
 {
-  "BarcodeCollection": {
-    "result": "12345",
-    "email": "lauffer@outlook.com",
-    "name": "Mauricio Lauffer",
-    "sex": "M",
-    "birthdate": "1983-07-25",
-    "createdate": "20140523",
-    "alert": true,
-    "lastchange": "20140913",
-    "lastsync" : "20140913",
-    "CategoryCollection": [
-      {
-        "idcategory": "1",
-        "description": "Aluguel",
-        "origin": "W",
-        "lastchange": "20140913"
-      },
-      {
-        "idcategory": "2",
-        "description": "Comida",
-        "origin": "W",
-        "lastchange": "20140913"
-      },
-      {
-        "idcategory": "3",
-        "description": "Bar",
-        "origin": "W",
-        "lastchange": "20140913"
-      },
-      {
-        "idcategory": "4",
-        "description": "Carro",
-        "origin": "W",
-        "lastchange": "20140913"
-      }
-    ]
-  }
+  "Barcodes": [
+    {
+      "value": 1
+    },
+    {
+      "value": 2
+    }
+  ]
 }

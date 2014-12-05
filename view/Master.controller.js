@@ -2,16 +2,16 @@ jQuery.sap.require("sap.m.MessageBox");
 
 sap.ui.core.mvc.Controller.extend("com.mlauffer.barcode.view.Master", {
 
-	onStartScan : function() {
-
+	onStart : function() {
 		var mPayload = {
 			value : $.now()
 		};
 
 		this.getView().getModel().getData().Barcodes.push(mPayload);
 		this.getView().getModel().refresh(true);
-		return;
+	},
 
+	onStartScan : function() {
 		cordova.plugins.barcodeScanner.scan(function(result) {
 			if (!result.cancelled) {
 				var mPayload = {
@@ -26,7 +26,6 @@ sap.ui.core.mvc.Controller.extend("com.mlauffer.barcode.view.Master", {
 		});
 	},
 
-	
 	onSync : function() {
 		var mData = this.getView().getModel().getData();
 
@@ -45,7 +44,7 @@ sap.ui.core.mvc.Controller.extend("com.mlauffer.barcode.view.Master", {
 			contentType : "application/json",
 			success : function(data, textStatus, jqXHR) {
 				alert("Conectou ao webservice!");
-				//this.getView().getModel().setData();
+				// this.getView().getModel().setData();
 			},
 			error : function(xhr, status) {
 				alert("Erro conectar ao webservice!");
