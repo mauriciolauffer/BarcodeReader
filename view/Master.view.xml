@@ -12,10 +12,11 @@
 		<footer>
 			<Bar>
 				<contentMiddle>
-					<Button id="startScan" icon="sap-icon://camera" />
+					<Button id="startScan" class="startScan" icon="sap-icon://camera" />
 					<Button icon="sap-icon://synchronize" press="onSync" />
 					<Button icon="sap-icon://upload" press="onSync" />
 					<Button icon="sap-icon://camera" press="onStartScan" />
+					<Button icon="sap-icon://add" press="onStart" />
 				</contentMiddle>
 			</Bar>
 		</footer>

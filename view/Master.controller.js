@@ -1,7 +1,13 @@
 jQuery.sap.require("sap.m.MessageBox");
 
+
 sap.ui.core.mvc.Controller.extend("com.mlauffer.barcode.view.Master", {
 
+	onInit : function() {
+		//document.querySelector("#startScan").addEventListener("touchend", startScan, false);
+		sap.ui.getCore().byId('startScan').addEventListener("touchend", this.onStartScan2, false);
+	},
+	
 	onStart : function() {
 		var mPayload = {
 			value : $.now()
@@ -12,6 +18,23 @@ sap.ui.core.mvc.Controller.extend("com.mlauffer.barcode.view.Master", {
 	},
 
 	onStartScan : function() {
+		alert('onStartScan');
+		cordova.plugins.barcodeScanner.scan(function(result) {
+			if (!result.cancelled) {
+				var mPayload = {
+					value : result.text
+				};
+				this.getView().getModel().getData().Barcodes.push(mPayload);
+				this.getView().getModel().refresh(true);
+			}
+
+		}, function(error) {
+			sap.m.MessageBox.alert("Scanning failed: " + error);
+		});
+	},
+	
+	onStartScan2 : function() {
+		alert('onStartScan2');
 		cordova.plugins.barcodeScanner.scan(function(result) {
 			if (!result.cancelled) {
 				var mPayload = {
